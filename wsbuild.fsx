@@ -49,6 +49,11 @@ Target.create "Build" (fun _ ->
 
 let release = ReleaseNotes.load "RELEASE_NOTES.md"
 
+let buildnumber =
+    match Environment.environVarOrNone "BUILD_NUMBER" with
+    | None -> "999"
+    | Some b -> b
+
 Target.create "Meta" (fun _ ->
     [ "<Project xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">"
       "<ItemGroup>"
@@ -66,7 +71,7 @@ Target.create "Meta" (fun _ ->
       sprintf "<PackageReleaseNotes>%s</PackageReleaseNotes>" (List.head release.Notes)
       "<PackageTags>MVU;fsharp</PackageTags>"
       "<Authors>Eugene Tolmachev</Authors>"
-      sprintf "<Version>%s</Version>" (string release.SemVer)
+      sprintf "<Version>%s</Version>" (string release.SemVer + "." + buildnumber)
       "</PropertyGroup>"
       "</Project>"]
     |> File.write false "Directory.Build.props"
