@@ -63,11 +63,11 @@ Target.create "Meta" (fun _ ->
       "<PropertyGroup>"
       "<EmbedUntrackedSources>true</EmbedUntrackedSources>"
       "<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>"
-      "<PackageProjectUrl>https://github.com/elmish/elmish</PackageProjectUrl>"
+      "<PackageProjectUrl>https://github.com/dotnet-websharper/elmish</PackageProjectUrl>"
       "<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>"
       "<PackageIconUrl>https://raw.githubusercontent.com/elmish/elmish/master/docs/files/img/logo.png</PackageIconUrl>"
       "<PackageIcon>logo.png</PackageIcon>"
-      "<RepositoryUrl>https://github.com/elmish/elmish.git</RepositoryUrl>"
+      "<RepositoryUrl>https://github.com/dotnet-websharper/elmish.git</RepositoryUrl>"
       sprintf "<PackageReleaseNotes>%s</PackageReleaseNotes>" (List.head release.Notes)
       "<PackageTags>MVU;fsharp</PackageTags>"
       "<Authors>Eugene Tolmachev</Authors>"
