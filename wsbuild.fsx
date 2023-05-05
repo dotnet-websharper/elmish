@@ -71,7 +71,7 @@ Target.create "Meta" (fun _ ->
       sprintf "<PackageReleaseNotes>%s</PackageReleaseNotes>" (List.head release.Notes)
       "<PackageTags>MVU;fsharp</PackageTags>"
       "<Authors>Eugene Tolmachev</Authors>"
-      sprintf "<Version>%s</Version>" (string release.SemVer + "." + buildnumber)
+      sprintf "<Version>%s</Version>" (string release.SemVer + "." + buildnumber + "-beta1")
       "</PropertyGroup>"
       "</Project>"]
     |> File.write false "Directory.Build.props"
