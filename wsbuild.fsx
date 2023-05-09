@@ -65,7 +65,7 @@ Target.create "Meta" (fun _ ->
       "<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>"
       "<PackageProjectUrl>https://github.com/dotnet-websharper/elmish</PackageProjectUrl>"
       "<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>"
-      "<PackageIconUrl>https://raw.githubusercontent.com/elmish/elmish/master/docs/files/img/logo.png</PackageIconUrl>"
+      "<PackageIconUrl>https://raw.githubusercontent.com/dotnet-websharper/core/websharper50/tools/WebSharper.png</PackageIconUrl>"
       "<PackageIcon>logo.png</PackageIcon>"
       "<RepositoryUrl>https://github.com/dotnet-websharper/elmish.git</RepositoryUrl>"
       sprintf "<PackageReleaseNotes>%s</PackageReleaseNotes>" (List.head release.Notes)
