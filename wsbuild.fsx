@@ -70,7 +70,7 @@ Target.create "Meta" (fun _ ->
       "<RepositoryUrl>https://github.com/dotnet-websharper/elmish.git</RepositoryUrl>"
       sprintf "<PackageReleaseNotes>%s</PackageReleaseNotes>" (List.head release.Notes)
       "<PackageTags>MVU;fsharp</PackageTags>"
-      "<Authors>Eugene Tolmachev</Authors>"
+      "<Authors>Eugene Tolmachev, intellifactory</Authors>"
       sprintf "<Version>%s</Version>" (string release.SemVer + "." + buildnumber + "-beta1")
       "</PropertyGroup>"
       "</Project>"]
