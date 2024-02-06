@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Elmish core for WebSharper apps</Description>
+    <Description>Fable.Elmish core for WebSharper apps</Description>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -15,9 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ImportPackage Update="FSharp.Core" Version="4.7.*" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="WebSharper" Version="6.0.4.240" />
+    <PackageReference Include="WebSharper" Version="6.0.4.240" />    
     <PackageReference Include="WebSharper.FSharp" Version="6.0.4.240" />
   </ItemGroup>
 </Project>

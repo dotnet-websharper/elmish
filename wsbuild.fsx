@@ -18,7 +18,9 @@ open System.IO
 
 
 // Filesets
-let projects  = !! "websharper/**.fsproj"
+let projects  =
+    !! "websharper/**.fsproj"
+    ++ "websharper-fable/**.fsproj"
 
 
 System.Environment.GetCommandLineArgs() 
@@ -35,16 +37,18 @@ Target.create "Clean" (fun _ ->
     Shell.cleanDir "netstandard/bin"
     Shell.cleanDir "websharper/obj"
     Shell.cleanDir "websharper/bin"
+    Shell.cleanDir "websharper-fable/obj"
+    Shell.cleanDir "websharper-fable/bin"
 )
 
 Target.create "Restore" (fun _ ->
     projects
-    |> Seq.iter (Path.GetDirectoryName >> DotNet.restore id)
+    |> Seq.iter (DotNet.restore id)
 )
 
 Target.create "Build" (fun _ ->
     projects
-    |> Seq.iter (Path.GetDirectoryName >> DotNet.build id)
+    |> Seq.iter (DotNet.build id)
 )
 
 let release = ReleaseNotes.load "RELEASE_NOTES.md"
@@ -82,7 +86,7 @@ Target.create "Meta" (fun _ ->
 
 Target.create "Package" (fun _ ->
     projects
-    |> Seq.iter (Path.GetDirectoryName >> DotNet.pack id)
+    |> Seq.iter (DotNet.pack id)
 )
 
 Target.create "WS-Package" ignore
