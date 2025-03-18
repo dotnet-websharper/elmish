@@ -17,7 +17,7 @@
     <ImportPackage Update="FSharp.Core" Version="4.7.*" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="WebSharper" Version="8.0.0.527-rc2" />
-    <PackageReference Include="WebSharper.FSharp" Version="8.0.0.527-rc2" />
+    <PackageReference Include="WebSharper" Version="8.0.0.529-rc2" />
+    <PackageReference Include="WebSharper.FSharp" Version="8.0.0.529-rc2" />
   </ItemGroup>
 </Project>

@@ -43,12 +43,12 @@ Target.create "Clean" (fun _ ->
 
 Target.create "Restore" (fun _ ->
     projects
-    |> Seq.iter (DotNet.restore id)
+    |> Seq.iter (DotNet.restore <| fun p -> { p with MSBuildParams = { p.MSBuildParams with DisableInternalBinLog = true } })
 )
 
 Target.create "Build" (fun _ ->
     projects
-    |> Seq.iter (DotNet.build id)
+    |> Seq.iter (DotNet.build <| fun p -> { p with MSBuildParams = { p.MSBuildParams with DisableInternalBinLog = true } })
 )
 
 let release = ReleaseNotes.load "RELEASE_NOTES.md"
@@ -86,7 +86,7 @@ Target.create "Meta" (fun _ ->
 
 Target.create "Package" (fun _ ->
     projects
-    |> Seq.iter (DotNet.pack id)
+    |> Seq.iter (DotNet.pack <| fun p -> { p with MSBuildParams = { p.MSBuildParams with DisableInternalBinLog = true } })
 )
 
 Target.create "WS-Package" ignore
